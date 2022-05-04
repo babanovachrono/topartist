@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import useSpotify from '../hooks/useSpotify'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -10,6 +10,7 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import SongRow from './songrow';
 import startDatabase from '../lib/firebase';
 import LogoutIcon from '@mui/icons-material/Logout';
+
 
 import {getDatabase, get, ref,set,child,update,remove, onValue} from "firebase/database"
 function Center() {
@@ -115,7 +116,7 @@ function Center() {
                 <div className="body__icons">
                    <LibraryMusicIcon className="body__shuffle" />
                     <FavoriteIcon fontSize="large" />
-                    <LogoutIcon fontSize='large'/>
+                    <LogoutIcon fontSize='large' onClick={signOut}/>
                 
                     
                  
