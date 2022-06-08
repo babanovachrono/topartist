@@ -25,7 +25,7 @@ function Center() {
     const[topTracks,setTopTracks]=useState([])
     const[topArtists,setTopArtists]=useState([])
     const[track,setTrack]=useState([])
-  
+      const[recentlyPlayed,setRecentlyPlayed]=useState([])
 
 
 
