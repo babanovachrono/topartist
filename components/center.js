@@ -91,11 +91,12 @@ function Center() {
   function getRecentlyPlayed(){
                     for (let i=0;i<recentlyPlayed.length;i++){
 
-                    if(recentlyPlayed[i].track){
+                    if(recentlyPlayed[i].track.id){
 
-                        myrecentlyplayed.push(recentlyPlayed[i].track)
+                        myrecentlyplayed.push(recentlyPlayed[i].track.id)
                     }
                 }
+       console.log(recentlyPlayed)
                 }
     
  
