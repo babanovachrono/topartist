@@ -100,7 +100,7 @@ console.log("it works")
                 }
        console.log(recentlyPlayed)
                 }
-    const testplayed=recentlyPlayed.mapfunction(realdata){
+    const testplayed=recentlyPlayed.map(function(realdata){
                 return(
                   <p>{realdata.track.id}</p>
                 )});
