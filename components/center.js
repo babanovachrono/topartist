@@ -132,7 +132,7 @@ console.log("it works")
                 <img src={imageCool? imageCool:"https://i.imgur.com/Uhdeb6V.png"}  />
                 <div className="body__infoText">
                     <h1>{session?.user.name}</h1>
-                    <h2>Personal Top Songs</h2>
+                    <h2>Recently played</h2>
                    
                     
              
@@ -141,9 +141,7 @@ console.log("it works")
  
             <div className="body__songs">
                 <div className="body__icons">
-                   <LibraryMusicIcon className="body__shuffle" />
-                    <FavoriteIcon fontSize="large" />
-                    <LogoutIcon fontSize='large' onClick={signOut}/>
+               
                 
                     
                  
