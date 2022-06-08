@@ -87,6 +87,7 @@ function Center() {
                 
                 }
                 }
+
 console.log("it works")
  let myrecentlyplayed=[]
   function getRecentlyPlayed(){
@@ -99,7 +100,11 @@ console.log("it works")
                 }
        console.log(recentlyPlayed)
                 }
-    
+    const testplayed=recentlyPlayed.mapfunction(realdata){
+                return(
+                  <p>{realdata.track.id}</p>
+                )});
+    }
  
    //usersRef.set(topTracks)
   function addStuffToDb(){
@@ -148,6 +153,8 @@ console.log("it works")
  
          
                 {songsComponent}
+{testplayed}
+
          </div>
         
     </div>
