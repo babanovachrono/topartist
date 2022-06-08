@@ -129,10 +129,10 @@ console.log("it works")
   return (
       <div className='centerbody'>
             <div className="body__info">
-                <img src={imageCool? imageCool:"https://i.imgur.com/Uhdeb6V.png"}  />
-                <div className="body__infoText">
+                <img src={imageCool? imageCool:"https://i.imgur.com/Uhdeb6V.png"} className="songRow__album"  />
+                <div className="songRow__info">
                     <h1>{session?.user.name}</h1>
-                    <h2>Recently played</h2>
+                    <p>Recently Played</p>
                    
                     
              
@@ -140,12 +140,7 @@ console.log("it works")
             </div>
  
             <div className="body__songs">
-                <div className="body__icons">
-               
-                
-                    
-                 
-                </div>
+            
              
  
          
