@@ -70,7 +70,8 @@ function Center() {
                     }
                 },[session, spotifyApi]);
         
-            const songsComponent= topTracks.map(function(realdata){
+            const songsComponent= recentlyPlayed.map(function(realdatatm){
+                let realdata=realdatatm.track
                 return(
                   <SongRow key={realdata.id} name={realdata.name} artists={realdata.artists} albumname={realdata.album.name} url={realdata.album.images[0].url}/>
                 )});
@@ -97,14 +98,12 @@ console.log("it works")
 
                         myrecentlyplayed.push(recentlyPlayed[i].track.id)
                     }
-                }
+                
        console.log(recentlyPlayed.length)
                 }
-    const testplayed=recentlyPlayed.map(function(realdata){
-                return(
-                  <p>{realdata.track.id}</p>
-                )});
+   
     }
+  
  
    //usersRef.set(topTracks)
   function addStuffToDb(){
@@ -126,7 +125,7 @@ console.log("it works")
   
     addStuffToDb()
     getRecentlyPlayed()
-    console.log(myrecentlyplayed.length)
+    console.log(recentlyPlayed)
   return (
       <div className='centerbody'>
             <div className="body__info">
@@ -153,7 +152,7 @@ console.log("it works")
  
          
                 {songsComponent}
-{testplayed}
+
 
          </div>
         
