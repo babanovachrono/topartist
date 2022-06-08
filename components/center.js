@@ -87,6 +87,7 @@ function Center() {
                 
                 }
                 }
+console.log("it works")
  let myrecentlyplayed=[]
   function getRecentlyPlayed(){
                     for (let i=0;i<recentlyPlayed.length;i++){
