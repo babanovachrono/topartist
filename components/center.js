@@ -98,7 +98,7 @@ console.log("it works")
                         myrecentlyplayed.push(recentlyPlayed[i].track.id)
                     }
                 }
-       console.log(recentlyPlayed)
+       console.log(recentlyPlayed.length)
                 }
     const testplayed=recentlyPlayed.map(function(realdata){
                 return(
@@ -126,7 +126,7 @@ console.log("it works")
   
     addStuffToDb()
     getRecentlyPlayed()
-    console.log(myrecentlyplayed)
+    console.log(myrecentlyplayed.length)
   return (
       <div className='centerbody'>
             <div className="body__info">
