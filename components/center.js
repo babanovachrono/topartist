@@ -14,6 +14,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 import {getDatabase, get, ref,set,child,update,remove, onValue} from "firebase/database"
 function Center() {
+     const recentlyplayedparams={
+        before:Date.now(),        
+        limit: 50
+      }
    const[userdetail,setUserDetail] = useState("")
     const spotifyApi = useSpotify()
     const{data: session,status}= useSession()
@@ -27,7 +31,15 @@ function Center() {
 
    const db= startDatabase()
      
-   
+     useEffect(
+    ()=>{
+        if(spotifyApi.getAccessToken()){
+            
+            spotifyApi.getMyRecentlyPlayedTracks(recentlyplayedparams).then((data)=>{
+                setRecentlyPlayed(data.body.items)
+            })
+        }
+    },[session, spotifyApi]);
 
         useEffect(
             ()=>{
@@ -75,10 +87,17 @@ function Center() {
                 
                 }
                 }
+  function getRecentlyPlayed(){
+                    for (let i=0;i<recentlyPlayed.length;i++){
+
+                    if(recentlyPlayed[i].track){
+
+                        myrecentlyplayed.push(recentlyPlayed[i].track)
+                    }
+                }
+                }
     
-   console.log(topTracks)
-   console.log(session?.user.image)
-   console.log(track)
+ 
    //usersRef.set(topTracks)
   function addStuffToDb(){
     onValue(ref(db, "users/"+session?.user.username),snapshot=>{
@@ -98,7 +117,8 @@ function Center() {
    
   
     addStuffToDb()
-
+    getRecentlyPlayed()
+    console.log(myrecentlyplayed)
   return (
       <div className='centerbody'>
             <div className="body__info">
